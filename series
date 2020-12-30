@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main(){
+    int i=0,j=0,a[100][5];
+    
+    while( scanf("%d %d %d %d %d",&a[j][0],&a[j][1],&a[j][2],&a[j][3],&a[j][4])){
+	
+	    if(a[j][0]==0&&a[j][1]==0&&a[j][2]==0&&a[j][3]==0&&a[j][4]==0)break;
+else  j++;
+    }
+   
+    for(i=0;i<j;i++){ 
+    
+        if(a[i][0]-a[i][1]==a[i][1]-a[i][2]&&a[i][2]-a[i][3]==a[i][3]-a[i][4]){
+		    int d=a[i][1]-a[i][0], s=a[i][4];
+	    printf("case one\n%d %d %d %d %d\n",s+d,s+2*d,s+3*d,s+4*d,s+5*d); 
+		
+	    }
+		
+		
+        if(a[i][1]/a[i][0]==a[i][2]/a[i][1]){
+		    int q=a[i][1]/a[i][0],s=a[i][4];
+	    printf("case two\n%d %d %d %d %d\n",s*q,s*q*q,s*q*q*q,s*q*q*q*q,s*q*q*q*q*q);
+	    } 
+        if(a[i][2]==a[i][0]+a[i][1]&&a[i][3]==a[i][1]+a[i][2]&&a[i][4]==a[i][2]+a[i][3]){
+		    
+	        int b=a[i][3],s=a[i][4];
+	    printf("case three\n%d %d %d %d %d\n",s+b,2*s+b,3*s+2*b,5*s+3*b,8*s+5*b);
+	
+	    }
+    }
+    return 0;
+ } 
