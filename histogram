@@ -1,0 +1,83 @@
+#include<stdio.h>
+#include<string.h>
+int main(){
+   int m;
+   scanf("%d",&m);
+   if(m>=1&&m<=20){
+   	  char s[2*m-1];
+	  for(int q=0;q<2*m-1;q++){
+	   	s[q]='-';
+	   }
+      int  a[100];
+      char b[100];
+      for(int i=0;i<m;i++){
+      	scanf("%d",&a[i]);
+        
+      	scanf("%c",&b[i]);
+	   }
+	
+   	  for(int j=0;j<m;j++){
+   	  	 if(b[j]==' '||b[j]=='\n'){
+			  
+   	  	 	b[j]='+';  
+		 }
+	   }
+	   int x=a[0];
+       for(int j=0;j<m;j++){
+       	   if(x>=a[j]){continue;
+			  }
+		   else  x=a[j];
+	   }   
+	   int y=a[0];
+	   for(int k=0;k<m;k++){
+	   	   if(y<=a[k]){continue;
+			  }
+		   else	 y=a[k];  
+       }
+       if(x<=0){
+       	 	for(int g=0;g<=2*m-1;g++){
+			   		printf("%c",s[g]);			   		
+				   }
+				   printf("\n");
+				if(y<0){
+					for(int n3=0;n3<-y;n3++){
+						for(int n4=0;n4<m;n4++){
+							if(a[n4]<-n3){
+							printf("%c ",b[n4]);
+							}
+							else printf("  ");
+						}
+						 printf("\n");						
+					}
+				}
+	   }
+       int n1,n2;      
+	   	for( n1=0;n1<x;n1++){
+       		for( n2=0;n2<m;n2++){
+       			    if(a[n2]>=x-n1){
+       			    	printf("%c ",b[n2]);
+					   }
+					else printf("  ");     			    
+			   }
+			   printf("\n");
+			   if(n1==x-1){
+			   	for(int g=0;g<=2*m-1;g++){
+			   		printf("%c",s[g]);			   		
+				   }
+				   printf("\n");
+				if(y<0){
+					for(int n3=0;n3<-y;n3++){
+						for(int n4=0;n4<m;n4++){
+							if(a[n4]<-n3){
+							printf("%c ",b[n4]);
+							}
+							else printf("  ");
+						}
+						 printf("\n");						
+					}
+				}
+			   }
+		   }      		   
+	   }       
+return 0;
+}
